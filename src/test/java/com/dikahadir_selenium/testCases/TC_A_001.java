@@ -12,7 +12,6 @@ public class TC_A_001 extends BaseClass{
 	@Test(description = "TC_A_001")
 	void login() {
 		Assert.assertEquals(driver.getTitle(), "HADIx");;
-		
 	}
 
 }

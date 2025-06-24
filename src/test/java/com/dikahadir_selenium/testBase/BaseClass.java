@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -15,12 +16,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -74,6 +72,10 @@ public class BaseClass {
 		driver.get(property.getProperty("appURL"));
 
 		driver.manage().window().maximize();
+	}
+	
+	public String randomNumeric() {
+		return RandomStringUtils.insecure().nextAlphanumeric(5);
 	}
 	
 	@AfterTest
