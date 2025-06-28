@@ -20,6 +20,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.dikahadir_selenium.testCases.common.LoginTest;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -27,8 +29,9 @@ import java.util.Map;
 
 
 public class BaseClass {
-	public WebDriver driver;
-	public Properties property;
+	public static WebDriver driver;
+	public static Properties property;
+	
 	
 	@BeforeTest
 	@Parameters({"os", "browser"})
@@ -72,11 +75,19 @@ public class BaseClass {
 		driver.get(property.getProperty("appURL"));
 
 		driver.manage().window().maximize();
+		
+		LoginTest.login(driver,property);
 	}
 	
-	public String randomNumeric() {
-		return RandomStringUtils.insecure().nextAlphanumeric(5);
+	public String randomNumeric(int size) {
+		return RandomStringUtils.insecure().nextNumeric(size);
 	}
+	
+	public String randomAlpha(int size) {
+		return RandomStringUtils.insecure().nextAlphabetic(size);
+	}
+	
+	
 	
 	@AfterTest
 	public void tearDown() {

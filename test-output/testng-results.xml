@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-20T17:02:48 WIB" name="Suite" finished-at="2025-06-20T17:02:53 WIB" duration-ms="5003">
+  <suite started-at="2025-06-29T01:46:14 WIB" name="Suite" finished-at="2025-06-29T01:46:43 WIB" duration-ms="29687">
     <groups>
     </groups>
-    <test started-at="2025-06-20T17:02:48 WIB" name="Test" finished-at="2025-06-20T17:02:53 WIB" duration-ms="5003">
-      <class name="com.dikahadir_selenium.testCases.TC_A_001">
-        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,org.testng.ITestContext)[pri:0, instance:com.dikahadir_selenium.testCases.TC_A_001@385c9627]" started-at="2025-06-20T17:02:49 WIB" name="setup" finished-at="2025-06-20T17:02:52 WIB" duration-ms="3793" status="PASS">
+    <test started-at="2025-06-29T01:46:14 WIB" name="CalenderTest" finished-at="2025-06-29T01:46:43 WIB" duration-ms="29687">
+      <class name="com.dikahadir_selenium.testCases.calender.TC_E_001">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,org.testng.ITestContext)[pri:0, instance:com.dikahadir_selenium.testCases.calender.TC_E_001@7dcf94f8]" started-at="2025-06-29T01:46:14 WIB" name="setup" finished-at="2025-06-29T01:46:18 WIB" duration-ms="4231" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,64 +21,34 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[org.testng.TestRunner@64aad6db]]>
+                <![CDATA[org.testng.TestRunner@455c1d8c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:0, instance:com.dikahadir_selenium.testCases.TC_A_001@385c9627]" started-at="2025-06-20T17:02:52 WIB" name="login" description="TC_A_001" finished-at="2025-06-20T17:02:52 WIB" duration-ms="34" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [HADIx] but found [HADIR]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [HADIx] but found [HADIR]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at com.dikahadir_selenium.testCases.TC_A_001.login(TC_A_001.java:14)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="addCalenderSuccess()[pri:0, instance:com.dikahadir_selenium.testCases.calender.TC_E_001@7dcf94f8]" started-at="2025-06-29T01:46:18 WIB" name="addCalenderSuccess" description="TC_E_001" finished-at="2025-06-29T01:46:22 WIB" duration-ms="3795" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.dikahadir_selenium.testCases.TC_A_001@385c9627]" started-at="2025-06-20T17:02:53 WIB" name="tearDown" finished-at="2025-06-20T17:02:53 WIB" duration-ms="648" status="PASS">
+        </test-method> <!-- addCalenderSuccess -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.dikahadir_selenium.testCases.calender.TC_E_001@7dcf94f8]" started-at="2025-06-29T01:46:42 WIB" name="tearDown" finished-at="2025-06-29T01:46:43 WIB" duration-ms="1217" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.dikahadir_selenium.testCases.TC_A_001 -->
-    </test> <!-- Test -->
+      </class> <!-- com.dikahadir_selenium.testCases.calender.TC_E_001 -->
+      <class name="com.dikahadir_selenium.testCases.calender.TC_E_016">
+        <test-method signature="editDescription()[pri:0, instance:com.dikahadir_selenium.testCases.calender.TC_E_016@77c2494c]" started-at="2025-06-29T01:46:32 WIB" name="editDescription" description="TC_E_016" finished-at="2025-06-29T01:46:42 WIB" duration-ms="10083" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editDescription -->
+      </class> <!-- com.dikahadir_selenium.testCases.calender.TC_E_016 -->
+      <class name="com.dikahadir_selenium.testCases.calender.TC_E_015">
+        <test-method signature="addDateDuplicate()[pri:0, instance:com.dikahadir_selenium.testCases.calender.TC_E_015@477b4cdf]" started-at="2025-06-29T01:46:22 WIB" name="addDateDuplicate" description="TC_E_015" finished-at="2025-06-29T01:46:32 WIB" duration-ms="10055" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addDateDuplicate -->
+      </class> <!-- com.dikahadir_selenium.testCases.calender.TC_E_015 -->
+    </test> <!-- CalenderTest -->
   </suite> <!-- Suite -->
 </testng-results>

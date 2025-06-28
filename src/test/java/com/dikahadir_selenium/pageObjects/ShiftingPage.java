@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class ShiftingPage extends BasePage{
@@ -18,7 +19,7 @@ public class ShiftingPage extends BasePage{
 	@FindBy(xpath = "//button[normalize-space()='Reset']")
 	WebElement resetBtn;
 	
-	@FindBy(xpath = "//button[type='submit']")
+	@FindBy(xpath = "//button[normalize-space()='Search']")
 	WebElement searchBtn;
 	
 	@FindBy(xpath = "//button[normalize-space()='Tambahkan']")
@@ -27,10 +28,16 @@ public class ShiftingPage extends BasePage{
 	@FindBy(xpath = "//tbody/tr")
 	List<WebElement> rowData;
 	
-	@FindBy(xpath = "//tbody/tr[1]/td[10]/div[1]/div[1]/button[1]")
+	@FindBy(xpath = "//tbody/tr/td[1]/h6")
+	List<WebElement> firstColumnDatas;
+	
+	@FindBy(xpath = "//tbody/tr/td[7]/h6")
+	List<WebElement> codeColumnDatas;
+	
+	@FindBy(xpath = "(//li[@role='menuitem'][normalize-space()='Edit'])[1]")
 	WebElement editFirstBtn;
 	
-	@FindBy(xpath = "//div[@id='mui-37']")
+	@FindBy(xpath = "//p[text()='Rows per page:']/following-sibling::div[contains(@class,'MuiInputBase-root')]")
 	WebElement rowsPerPageBtn;
 	
 	@FindBy(xpath = "//li[normalize-space()='25']")
@@ -42,7 +49,7 @@ public class ShiftingPage extends BasePage{
 	@FindBy(xpath = "//button[@title='Go to next page']")
 	WebElement nextBtn;
 	
-	@FindBy(xpath = "//button[title='Go to last page']")
+	@FindBy(xpath = "//button[@title='Go to last page']")
 	WebElement lastBtn;
 	
 	@FindBy(xpath = "//button[@title='Go to previous page']")
@@ -52,7 +59,10 @@ public class ShiftingPage extends BasePage{
 	WebElement firstBtn;
 	
 	@FindBy(xpath = "(//li[@role='menuitem'][normalize-space()='Delete'])[1]")
-	WebElement deleteBtn;
+	WebElement deleteFirstBtn;
+	
+	@FindBy(xpath = "(//button[@aria-label='action'])[1]")
+	WebElement actionFirstBtn;
 	
 	@FindBy(xpath = "//button[normalize-space()='Tidak']")
 	WebElement cancelDeleteBtn;
@@ -62,6 +72,8 @@ public class ShiftingPage extends BasePage{
 	
 	@FindBy(xpath="//div[contains(@class,'MuiSnackbarContent-message')]")
 	WebElement snackBarMessage;
+	
+	By snackBarMessageLocator = By.xpath("//div[contains(@class,'MuiSnackbarContent-message')]");
 	
 	@FindBy(xpath = "//input[@id='name']")
 	WebElement nameShiftField;
@@ -99,6 +111,17 @@ public class ShiftingPage extends BasePage{
 	@FindBy(xpath = "//div[@role='dialog']")
 	WebElement dialogContainer;
 	
+	@FindBy(xpath = "//tbody/tr/td[1]/h6")
+	List<WebElement> listShiftName;
+	
+	@FindBy(xpath = "//p[@id='name-helper-text']")
+	WebElement messageMandatoryName;
+	
+	@FindBy(xpath = "//p[contains(@id,'helper-text')]")
+	List<WebElement> messageMandatoryList;
+	
+	By timeDialog = By.xpath("//div[contains(@class,'MuiCalendarOrClockPicker-root')]");
+	
 	
 	public void setSearch(String search) {
 		searchField.sendKeys(search);
@@ -124,7 +147,7 @@ public class ShiftingPage extends BasePage{
 		rowsPerPageBtn.click();
 	}
 	
-	public void selectValTotalRows() {
+	public void selectVal25TotalRows() {
 		dropdown25Btn.click();
 	}
 	
@@ -135,17 +158,29 @@ public class ShiftingPage extends BasePage{
 	public void clicklast() {
 		lastBtn.click();
 	}
+	public WebElement getElementlast() {
+		return lastBtn;
+	}
 	
 	public void clickPrevious() {
 		previousBtn.click();
 	}
 	
 	public void clickFirst() {
-		previousBtn.click();
+		firstBtn.click();
+	}
+	
+	public WebElement getElementFirst() {
+		return firstBtn;
 	}
 	
 	public void openDeleteDialog() {
-		deleteBtn.click();
+		deleteFirstBtn.click();
+	}
+	
+	
+	public void clickActionFirst() {
+		actionFirstBtn.click();
 	}
 	
 	public void cancelDelete() {
@@ -153,22 +188,31 @@ public class ShiftingPage extends BasePage{
 	}
 	
 	public void confirmDelete() {
-		confirmDeleteBtn.click();
+		clickJs(confirmDeleteBtn);
 	}
 	
-	String getSnackbarMessage() {
+	public String getSnackbarMessage() {
 		return snackBarMessage.getText();
+	}
+	public WebElement getSnackbarMessageElement() {
+		return snackBarMessage;
+	}
+	public By getSnackbarMessageLocator() {
+		return snackBarMessageLocator;
 	}
 	
 	public void setName(String name) {
 		nameShiftField.sendKeys(name);
 	}
-	
-	public void clickUnit() {
-		openUnit.click();
+	public WebElement getElementName() {
+		return nameShiftField;
 	}
 	
-	public void clickThirdOption() {
+	public void clickUnit() {
+		clickJs(openUnit);
+	}
+	
+	public void clickThirdUnitOption() {
 		unitThirdOption.click();
 	}
 	
@@ -189,14 +233,26 @@ public class ShiftingPage extends BasePage{
 	}
 	
 	public void chooseTime(String timeChoose) {
-		driver.findElement(By.xpath("//div[contains(@class, 'MuiClockPicker-root')]//span[text()='"+timeChoose+"']")).click();
+
+		WebElement thickEl = driver.findElement(By.xpath("//div[contains(@class,'MuiClock-pin')]"));
+	    WebElement chooseTime = driver.findElement(By.xpath("//div[contains(@class, 'MuiClockPicker-root')]//span[text()='"+timeChoose+"']"));
+	    
+	    Actions acs = new Actions(driver);
+	    acs.clickAndHold(thickEl) 
+	       .moveToElement(chooseTime) 
+	       .release() 
+	       .build() 
+	       .perform(); 
 	}
 	
 	public void setCodeUnit(String codeUnit) {
 		codeUnitField.sendKeys(codeUnit);
 	}
+	public WebElement getCodeUnit() {
+		return codeUnitField;
+	}
 	
-	public void addConfirmBtn() {
+	public void clickConfirmAdd() {
 		addConfirmBtn.click();
 	}
 	
@@ -204,12 +260,49 @@ public class ShiftingPage extends BasePage{
 		editConfirmBtn.click();
 	}
 	
-	public boolean displayDialog() {
-		return dialogContainer.isDisplayed();
+	
+	public void clickCancel() {
+		cancelBtn.click();
 	}
 	
 	int getSizeData() {
 		return rowData.size();
+	}
+	
+	public int shiftNameSize() {
+		return listShiftName.size();
+	}
+	
+	public List<WebElement> datasFirstColumn(){
+		return firstColumnDatas;
+	}
+	public List<WebElement> datasCodeColumn(){
+		return codeColumnDatas;
+	}
+	
+	public WebElement getMessageMandatoryName() {
+		return messageMandatoryName;
+	}
+	
+	public By getLocatorTimeDialog() {
+		return timeDialog;
+	}
+	
+	public String getPageDisplay() {
+		return pageDisplay.getText();
+	}
+	
+	public List<WebElement> getMessageMandatoryList(){
+		return messageMandatoryList;
+	}
+	
+	public void clearName(int length) {
+		clearUsingKeyboard(nameShiftField,length);
+		
+	}
+	public void clearCode(int length) {
+		clearUsingKeyboard(codeUnitField, length);
+
 	}
 
 }

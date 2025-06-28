@@ -1,9 +1,13 @@
 package com.dikahadir_selenium.pageObjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class DashboardPage {
+public class DashboardPage extends BasePage{
+	public DashboardPage(WebDriver driver) {
+		super(driver);
+	}
 	
 	@FindBy(xpath = "(//div[contains(@class,'sidebar__item MuiBox-root')])[4]")
 	WebElement managementSideBar;
