@@ -4,7 +4,7 @@
 	<listeners>
         <listener class-name="com.dikahadir_selenium.utilities.ExtentReportManager"/>
     </listeners>
-  <!-- <test thread-count="5" name="ShiftingTest">
+   <test thread-count="5" name="ShiftingTest">
   	<parameter name="os" value="Windows"/>
   	<parameter name="browser" value="chrome"/>
     <classes>
@@ -26,14 +26,15 @@
     	<class name="com.dikahadir_selenium.testCases.shifting.TC_C_016"/>
     	<class name="com.dikahadir_selenium.testCases.shifting.TC_C_017"/>
     	<class name="com.dikahadir_selenium.testCases.shifting.TC_C_018"/> 
+    	<class name="com.dikahadir_selenium.testCases.shifting.TC_C_019"/> 
     </classes>
-  </test>  -->
+  </test>  
   <test thread-count="5" name="CalenderTest">
   	<parameter name="os" value="Windows"/>
   	<parameter name="browser" value="chrome"/>
     <classes>
     	<class name="com.dikahadir_selenium.testCases.calender.TC_E_001"/>
-    	<!--<class name="com.dikahadir_selenium.testCases.calender.TC_E_002"/> 
+    	<class name="com.dikahadir_selenium.testCases.calender.TC_E_002"/> 
     	<class name="com.dikahadir_selenium.testCases.calender.TC_E_003"/>
     	<class name="com.dikahadir_selenium.testCases.calender.TC_E_004"/>
     	<class name="com.dikahadir_selenium.testCases.calender.TC_E_005"/> 
@@ -45,9 +46,13 @@
     	<class name="com.dikahadir_selenium.testCases.calender.TC_E_011"/> 
     	<class name="com.dikahadir_selenium.testCases.calender.TC_E_012"/> 
     	<class name="com.dikahadir_selenium.testCases.calender.TC_E_013"/> 
-    	<class name="com.dikahadir_selenium.testCases.calender.TC_E_014"/>-->
+    	<class name="com.dikahadir_selenium.testCases.calender.TC_E_014"/>
     	<class name="com.dikahadir_selenium.testCases.calender.TC_E_015"/> 
     	<class name="com.dikahadir_selenium.testCases.calender.TC_E_016"/> 
+    	<class name="com.dikahadir_selenium.testCases.calender.TC_E_017"/> 
+    	<class name="com.dikahadir_selenium.testCases.calender.TC_E_018"/> 
+    	<class name="com.dikahadir_selenium.testCases.calender.TC_E_019"/> 
+    	
     </classes>
   </test> <!-- Test -->
  

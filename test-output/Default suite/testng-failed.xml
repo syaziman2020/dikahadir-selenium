@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dikahadir_selenium.testCases.calender.TC_E_013">
+      <class name="com.dikahadir_selenium.testCases.shifting.TC_C_007">
         <methods>
-          <include name="addDateDetail"/>
+          <include name="addDuplicatShift"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.dikahadir_selenium.testCases.calender.TC_E_013 -->
+      </class> <!-- com.dikahadir_selenium.testCases.shifting.TC_C_007 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -23,6 +23,7 @@ public class CalenderPage extends BasePage{
 	@FindBy(xpath = "//button[normalize-space()='Search']")
 	WebElement searchBtn;
 	
+	
 	@FindBy(xpath = "//button[normalize-space()='Tambahkan Kalender']")
 	WebElement addCalenderBtn;
 	
@@ -38,7 +39,7 @@ public class CalenderPage extends BasePage{
 	@FindBy(xpath = "//input[@id='name']")
 	WebElement calenderUnitField;
 	
-	@FindBy(xpath = "//p[@id='name-helper-text']")
+	@FindBy(xpath = "//p[contains(@id,'helper-text')]")
 	WebElement textUnitEmpty;
 	
 	@FindBy(xpath = "//div[contains(@class,'MuiSnackbarContent-message')]")
@@ -90,6 +91,8 @@ public class CalenderPage extends BasePage{
 	WebElement confirmEditBtn;
 	
 	By dialogLocator = By.xpath("//div[@role='dialog']");
+	
+	
 	
 	public void clickConfirmEdit() {
 		confirmEditBtn.click();

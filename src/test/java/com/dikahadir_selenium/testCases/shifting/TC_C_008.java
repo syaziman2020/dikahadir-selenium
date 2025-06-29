@@ -15,7 +15,7 @@ public class TC_C_008 extends BaseClass {
 		String firstData = sp.datasFirstColumn().getFirst().getText();
 		sp.clickActionFirst();
 		sp.openDeleteDialog();
-		
+		Thread.sleep(500);
 		sp.cancelDelete();
 		driver.navigate().refresh();
 		Thread.sleep(1500);

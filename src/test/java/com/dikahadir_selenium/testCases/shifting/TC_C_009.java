@@ -17,10 +17,10 @@ public class TC_C_009 extends BaseClass {
 		sp.openDeleteDialog();
 		
 		sp.confirmDelete();
-		Thread.sleep(500);
+		Thread.sleep(700);
 		sp.setSearch(firstData);
 		sp.clickSearch();
-		Thread.sleep(700);
+		Thread.sleep(1000);
 		Assert.assertEquals(sp.getPageDisplay(), "0-0 of 0");
 	}
 

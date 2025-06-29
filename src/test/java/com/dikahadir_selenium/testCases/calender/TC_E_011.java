@@ -30,7 +30,9 @@ public class TC_E_011 extends BaseClass{
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(cdp.getDialogLocator()));
 		cdp.clickDate();
+		Thread.sleep(100);
 		cdp.chooseNextMonth();
+		Thread.sleep(100);
 		cdp.chooseDate();
 		Thread.sleep(300);
 		

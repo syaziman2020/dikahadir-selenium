@@ -16,11 +16,11 @@ public class TC_C_016 extends BaseClass{
 		Thread.sleep(1000);
 		
 		sp.clickNext();
-		Thread.sleep(700);
+		Thread.sleep(800);
 		Assert.assertEquals(StringExtractorUtil.getPartBeforeOf(sp.getPageDisplay()), "11-20");
 		
 		sp.clickPrevious();
-		Thread.sleep(700);
+		Thread.sleep(800);
 		Assert.assertEquals(StringExtractorUtil.getPartBeforeOf(sp.getPageDisplay()), "1-10");
 	}
 }

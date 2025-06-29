@@ -17,6 +17,14 @@ public class TC_E_009 extends BaseClass{
 		driver.navigate().to("https://magang.dikahadir.com/management/calendar");
 
 		CalenderPage cp = new CalenderPage(driver);
+		cp.clickAdd();
+		String randomCal = randomAlpha(6);
+		cp.setCalenderUnit(randomCal);
+		cp.clickAddConfirm();
+		Thread.sleep(500);
+		driver.navigate().refresh();
+		Thread.sleep(1000);
+		
 		cp.getListActionBtn().getFirst().click();
 		
 		cp.clickViewFirst();
@@ -29,7 +37,9 @@ public class TC_E_009 extends BaseClass{
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(cdp.getDialogLocator()));
 		cdp.clickDate();
+		Thread.sleep(100);
 		cdp.chooseNextMonth();
+		Thread.sleep(100);
 		cdp.chooseDate();
 		Thread.sleep(300);
 		

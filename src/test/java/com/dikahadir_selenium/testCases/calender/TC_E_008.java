@@ -14,8 +14,8 @@ import com.dikahadir_selenium.testBase.BaseClass;
 
 public class TC_E_008 extends BaseClass{
 	
-	@Test(description = "TC_E_007")
-	void deleteSuccess() throws InterruptedException {
+	@Test(description = "TC_E_008")
+	void detailCalender() throws InterruptedException {
 		driver.navigate().to("https://magang.dikahadir.com/management/calendar");
 
 		CalenderPage cp = new CalenderPage(driver);

@@ -19,19 +19,21 @@ public class TC_E_007 extends BaseClass{
 		String firstData=cp.getListDataFirstColumn().getFirst().getText();
 		
 		cp.getListActionBtn().getFirst().click();
+		
 		cp.deleteFirstData();
 		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.presenceOfElementLocated(cp.getDialogLocator()));
-		
+		Thread.sleep(100);
 		cp.clickConfirmDelete();
+		driver.navigate().refresh();
 		
-		Thread.sleep(500);
+		Thread.sleep(800);
 		
 		cp.setSearch(firstData);
 		cp.clickSearch();
 
-		Thread.sleep(500);
+		Thread.sleep(800);
 		Assert.assertEquals(cp.getPageDisplay(), "0-0 of 0");
 	}
 

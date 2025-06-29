@@ -56,7 +56,7 @@ public class TC_C_006 extends BaseClass{
 		sp.setSearch(randomName);
 		sp.clickSearch();
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		
 		Assert.assertEquals(sp.getPageDisplay(), "0-0 of 0");
 	}

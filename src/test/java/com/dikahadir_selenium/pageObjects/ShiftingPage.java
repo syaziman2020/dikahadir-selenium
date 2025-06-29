@@ -73,7 +73,7 @@ public class ShiftingPage extends BasePage{
 	@FindBy(xpath="//div[contains(@class,'MuiSnackbarContent-message')]")
 	WebElement snackBarMessage;
 	
-	By snackBarMessageLocator = By.xpath("//div[contains(@class,'MuiSnackbarContent-message')]");
+	By snackBarMessageLocator = By.xpath("//div[contains(@class,'MuiSnackbarContent')]");
 	
 	@FindBy(xpath = "//input[@id='name']")
 	WebElement nameShiftField;

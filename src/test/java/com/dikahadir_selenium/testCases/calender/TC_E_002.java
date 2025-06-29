@@ -13,10 +13,10 @@ public class TC_E_002 extends BaseClass{
 		
 		CalenderPage cp = new CalenderPage(driver);
 		cp.clickAdd();
-		
+		Thread.sleep(100);
 		cp.clickAddConfirm();
 		
-		Thread.sleep(500);
+		Thread.sleep(600);
 		Assert.assertTrue(cp.messageUnitEmptyElement().isDisplayed());
 	}
 }

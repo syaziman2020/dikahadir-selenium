@@ -2,6 +2,7 @@ package com.dikahadir_selenium.testCases.shifting;
 
 import java.time.Duration;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -52,8 +53,8 @@ public class TC_C_007 extends BaseClass{
 		sp.chooseTime("00");
 		Thread.sleep(300);
 		sp.clickConfirmAdd();
-		
-		Assert.assertTrue(sp.getSnackbarMessageElement().isDisplayed());
+		WebElement snackbar =wait.until(ExpectedConditions.presenceOfElementLocated(sp.getSnackbarMessageLocator()));
+		Assert.assertTrue(snackbar.isDisplayed());
 		
 	}
 

@@ -65,6 +65,9 @@ public class CalenderDetailPage extends BasePage{
 	@FindBy(xpath = "//button[normalize-space()='Batal']")
 	WebElement cancelBtn;
 	
+	@FindBy(xpath = "//button[normalize-space()='Tidak']")
+	WebElement cancelDeleteDetailCal;
+	
 	@FindBy(xpath = "(//button[@aria-label='action'])[1]")
 	WebElement firstActBtn;
 	
@@ -74,11 +77,29 @@ public class CalenderDetailPage extends BasePage{
 	@FindBy(xpath = "//button[normalize-space()='Simpan']")
 	WebElement confirmEdit;
 	
+	@FindBy(xpath = "(//li[normalize-space()='Delete'])[1]")
+	WebElement deleteFirstBtn;
+	
+	@FindBy(xpath = "//button[normalize-space()='Ya']")
+	WebElement confirmDeleteBtn;
+	
 	By dialogLocator = By.xpath("//div[@role='dialog']");
+	
+	public void clickConfirmDelete() {
+		confirmDeleteBtn.click();
+	}
+	
+	public void clickCancelDeleteDetailCal() {
+		cancelDeleteDetailCal.click();
+	}
 	
 	
 	public By getDialogLocator() {
 		return dialogLocator;
+	}
+	
+	public void clickFirstDelete() {
+		deleteFirstBtn.click();
 	}
 	
 	public List<WebElement> getDataDescColums(){

@@ -20,7 +20,7 @@ public class TC_E_004 extends BaseClass{
 
 		Thread.sleep(500);
 		cp.clickReset();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		Assert.assertTrue(cp.getListDataFirstColumn().size() == 10);
 	}
 }

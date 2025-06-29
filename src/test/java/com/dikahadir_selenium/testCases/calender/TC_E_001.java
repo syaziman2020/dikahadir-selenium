@@ -14,15 +14,16 @@ public class TC_E_001 extends BaseClass{
 		
 		CalenderPage cp = new CalenderPage(driver);
 		cp.clickAdd();
+		Thread.sleep(100);
 		String randomCal = randomAlpha(6);
 		cp.setCalenderUnit(randomCal);
 		cp.clickAddConfirm();
-		Thread.sleep(800);
+		Thread.sleep(1000);
 		
 		cp.setSearch(randomCal);
 		cp.clickSearch();
 		
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		Assert.assertTrue(cp.getListDataFirstColumn().size() > 0);
 	}
 

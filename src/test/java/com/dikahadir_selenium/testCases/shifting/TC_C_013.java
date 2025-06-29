@@ -29,6 +29,7 @@ public class TC_C_013 extends BaseClass{
 		sp.setCodeUnit(secondDataCode);
 
 		sp.editConfirmButton();
+		Thread.sleep(100);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		WebElement snackbar = wait.until(ExpectedConditions.presenceOfElementLocated(sp.getSnackbarMessageLocator()));
 		

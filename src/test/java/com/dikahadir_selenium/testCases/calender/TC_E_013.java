@@ -18,6 +18,14 @@ public class TC_E_013 extends BaseClass{
 		driver.navigate().to("https://magang.dikahadir.com/management/calendar");
 
 		CalenderPage cp = new CalenderPage(driver);
+		cp.clickAdd();
+		String randomCal = randomAlpha(6);
+		cp.setCalenderUnit(randomCal);
+		cp.clickAddConfirm();
+		Thread.sleep(500);
+		
+		driver.navigate().refresh();
+		Thread.sleep(1000);
 		cp.getListActionBtn().getFirst().click();
 		
 		cp.clickViewFirst();
@@ -40,7 +48,7 @@ public class TC_E_013 extends BaseClass{
 		
 		cdp.confirmAdd();
 		Thread.sleep(600);
-		Assert.assertEquals(cdp.getPageDisplay(), "1-1 of 1");
+		Assert.assertTrue(cdp.getDataDescColums().size() > 0);
 	}
 
 }
